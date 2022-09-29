@@ -120,5 +120,5 @@ POST	/posts
 
 PUT	/posts/1
 
-DELETE	/posts?id=1
+DELETE	/posts/1
 
