@@ -54,7 +54,7 @@ const PostForm = () => {
   }
 
   return (
-    <section className="container">
+    <section className="container vh-75">
       <CardTitle fontSize="xx-large" textAlign="center" margin="10px">
         {id ? "Edit" : "Add new"} post
       </CardTitle>

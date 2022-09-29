@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="container">
       <div className="row">
-        <div className="col-12 col-md-12 text-center my-3 align-middle">
+        <div className="col-12 col-md-12 text-center my-3 align-middle ">
           created by Linda Giurca
         </div>
       </div>

@@ -3,23 +3,33 @@ import { useDispatch, useSelector } from "react-redux";
 import RenderPosts from "../common/RenderPosts";
 import { selectAllPosts } from "../../redux/selectors/postSelector";
 import { loadPosts } from "../../redux/actions/postActions";
-import Button from "../../style/Button.style";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
 
 const Posts = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const posts = useSelector(selectAllPosts);
 
   useEffect(() => {
     dispatch(loadPosts());
   }, [dispatch]);
 
+  const addIcon = (
+    <FontAwesomeIcon icon={faCirclePlus} size="3x" color="black" />
+  );
+
   return (
     <section className="container">
-      <Button variant="text" onClick={() => navigate(`/form`)}>
-        Add new chili
-      </Button>
+      <button
+        className="btn btn-white"
+        variant="text"
+        onClick={() => navigate(`/form`)}
+      >
+        {addIcon}
+      </button>
       <div className="row justify-content-center align-items-center gy-4">
         {posts.map((post) => (
           <div

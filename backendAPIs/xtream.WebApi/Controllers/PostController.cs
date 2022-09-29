@@ -90,5 +90,18 @@ namespace xtream.WebApi.Controllers
             return Ok();
 
         }
+
+        [HttpGet]
+        [Route("/getAll")]
+        public IActionResult IndexPaginated(int pageNum, int pageLength)
+        {
+            List<Post> posts = _bl.FetchPaginatedPosts(pageNum, pageLength);
+
+            List<PostViewModel> postVM = new List<PostViewModel>();
+
+            foreach (var post in posts)
+                postVM.Add(_mp.Map<PostViewModel>(post));
+            return Ok(postVM);
+        }
     }
 }

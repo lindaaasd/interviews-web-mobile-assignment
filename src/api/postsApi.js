@@ -7,6 +7,15 @@ export function getPosts() {
   return fetch(baseUrl).then(handleResponse).catch(handleError);
 }
 
+export function getPostsPaginated(pageNum, options = {}) {
+  return fetch(
+    "https://localhost:3001/getAll?pageNum=" + pageNum + "&pageLength=6",
+    options
+  )
+    .then(handleResponse)
+    .catch(handleError);
+}
+
 export function getPostsById(postId) {
   return fetch(baseUrl + "/" + postId)
     .then(handleResponse)

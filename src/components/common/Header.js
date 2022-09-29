@@ -7,14 +7,19 @@ const Header = () => {
   return (
     <nav className="navbar container">
       <div className="row justify-content-between align-items-center w-100">
-        <div className="col-12 col-md-6 d-flex justify-content-center">
+        <div className="col-12 col-md-6 d-flex justify-content-start">
           <Link className="navbar-brand" to="/">
             <img src={logo} alt="logo xtream" width="100" height="100" />
           </Link>
         </div>
-        <div className="col-12 col-md-6 d-flex justify-content-center">
+        <div className="col-12 col-md-3 d-flex justify-content-center">
           <Link to="/posts">
             <Button fontSize="xx-large">Posts</Button>
+          </Link>
+        </div>
+        <div className="col-12 col-md-3 d-flex justify-content-center">
+          <Link to="/postsPaginated">
+            <Button fontSize="xx-large">Infinite posts</Button>
           </Link>
         </div>
       </div>
