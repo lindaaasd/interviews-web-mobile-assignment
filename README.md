@@ -113,9 +113,14 @@ The requirements for this challenge are the exact same requirements of the Front
 **** THE APIS RUN ON https://localhost:3001/api/Posts ****
 
 GET /posts
+
 GET /posts/1
+
 POST	/posts
+
 PUT	/posts/1
+
 DELETE	/posts/1
+
 
 
