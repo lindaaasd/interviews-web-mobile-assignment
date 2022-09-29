@@ -26,7 +26,7 @@ const Posts = () => {
             key={post.id}
             className="col-12 col-md-3 m-5 d-flex h-100 justify-content-center"
           >
-            <RenderPosts postId={post.id} />
+            <RenderPosts postId={post.id} key={post.id} />
           </div>
         ))}
       </div>

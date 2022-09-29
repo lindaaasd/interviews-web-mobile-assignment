@@ -35,7 +35,7 @@ const DeleteModal = ({ postId }) => {
     dispatch(deletePosts(postId))
       .then(() => {
         handleClose();
-        toast.error("Post deleted.");
+        toast.success("Post deleted.");
         console.log("sono qui");
         navigate("/posts", { replace: true });
       })

@@ -32,7 +32,8 @@ namespace xtream.WebApi.Controllers
             return Ok(postsVM);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet]
+        [Route("{id}")]
         public IActionResult GetPostByID(int id)
         {
             var post = _bl.FetchAllPosts().Where(c => c.Id == id);
@@ -65,9 +66,10 @@ namespace xtream.WebApi.Controllers
         }
 
         [HttpPut]
-        public IActionResult UpdatePost(int id, PostViewModel updatedPostVM)
+        [Route("{id}")]
+        public IActionResult UpdatePost(int id, [FromBody] PostViewModel updatedPostVM)
         {
-
+            updatedPostVM.Id = id;
             var post = _bl.GetPostById(updatedPostVM.Id);
             post = _mp.Map<Post>(updatedPostVM); // mapping to original Chilli
             _bl.UpdatePost(post);
@@ -77,6 +79,7 @@ namespace xtream.WebApi.Controllers
         }
 
         [HttpDelete]
+        [Route("{id}")]
         public IActionResult DeletePostByID(int id)
         {
             var postToRemove = new Post { Id = id };

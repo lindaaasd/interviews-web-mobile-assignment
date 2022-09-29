@@ -58,10 +58,10 @@ export function deletePosts(postId) {
   };
 }
 
-export function savePost(post) {
+export function savePost(post, id) {
   return function (dispatch) {
     return postsApi
-      .savePost(post)
+      .savePost(post, id)
       .then((savedPost) => {
         post.id
           ? dispatch(updatePostSuccess(savedPost))

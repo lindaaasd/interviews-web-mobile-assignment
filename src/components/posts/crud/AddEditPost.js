@@ -33,7 +33,7 @@ const PostForm = () => {
     event.preventDefault();
     if (!formIsValid()) return;
     setSaving(true);
-    dispatch(savePost(posts))
+    dispatch(savePost(posts, id))
       .then(() => {
         toast.success("Post saved.");
         navigate("/posts");
