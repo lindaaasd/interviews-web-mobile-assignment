@@ -102,10 +102,12 @@ The requirements for this challenge are the exact same requirements of the Front
 
 # How to run
 
-BACKEND APIS
+#### BACKEND APIS
 
 -> made in .NET with Visual Studio
+
 -> xtream.CoreEF is done with Entity Framework and creates a localhost SQL DB. In order to make the apis work, kindly run a migration first. Open Tools menu -> NuGet Package Manager -> Package Manager Console. Type in: Add-Migration FirstMigration and after Update-Database. It's possible you may need to only Update-Database in the console, without having to run a migration first.
+
     * if you are running the project on macOS, SQL Server needs to be run on Docker ( free download docker.com ), using the Microsoft SQL Server image ( docker pull mcr.microsoft.com/mssql/server ), run a migration and updatedatabase. 
 
 **** THE APIS RUN ON https://localhost:3001/api/Posts ****
